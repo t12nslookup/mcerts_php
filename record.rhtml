@@ -1,0 +1,14 @@
+<%
+require "rubygems"
+require_gem "activerecord"
+
+ActiveRecord::Base.establish_connection(:adapter=>"oci",
+	:host=>"v20z1:1521/LIMS2",
+	:username=>"saltest",:password=>"oraclev1")
+	
+class Item < ActiveRecord::Base
+end
+
+item=Item.find(1)
+print item.hours
+%>

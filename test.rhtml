@@ -1,0 +1,85 @@
+<html>
+<pre>
+<%
+class Result < ActiveRecord::Base
+	set_primary_key "resultid"
+	set_sequence_name "result_seq"
+	def self.save_all results
+		transaction do 
+			results.each {|r| r.save}
+		end
+	end
+end
+  
+class AtomScannerParser 
+  attr_accessor :x,:total_time
+  def initialize file
+  	start=Time.now
+	samples = Array.new
+	parsing_element_information=false
+	parsing_sample_information=false
+	field_seperator=","
+	
+	for line in file
+		line_columns=line.split(field_seperator)
+		if line_columns[0].strip=="#" #new batch of samples
+			parsing_sample_information = !parsing_sample_information
+			columns = Array.new
+			line_columns.each {|column|	columns.push(column.strip)}
+			next
+	  	end
+	  	#goto next iteration in loop if not line with sample on
+		next if line_columns[0].to_i==0 or line_columns.size==1 
+		
+	  	sample_line_number=line_columns[0].to_i
+	  	samples[sample_line_number]=Hash.new if samples[sample_line_number]==nil
+	  
+	  	if parsing_sample_information
+			columns.each_with_index {|column,index|  samples[sample_line_number][column]=line_columns[index].strip}
+	  	else
+			samples[sample_line_number]["elements"] = Hash.new if samples[sample_line_number]["elements"]==nil
+			columns.each_with_index {|column,index|  samples[sample_line_number]["elements"][column]=line_columns[index].strip if index>1}		
+	  	end
+	end
+	
+	samples.delete_at 0 #there is no sample number 0
+	ActiveRecord::Base.establish_connection(:adapter=>"oci",
+											:host=>"v20z1:1521/LIMS2",
+											:username=>"saltest",:password=>"oraclev1")
+	
+	@x=0
+	results = []	
+	for sample in samples
+	  for key,value in sample["elements"]
+		compound,concentration=key,value
+		if concentration!=""
+			results << Result.new(:compound=>compound,
+							:concentration=>concentration,
+							:sample=>sample["Sample Name"],
+		  					:deleted=>1)
+			@x+=1
+  		end
+ 	end
+  	end
+  	Result.save_all results
+  	@total_time=Time.now-start
+  end
+end
+%>
+
+<%
+require 'cgi'
+require "rubygems"
+require_gem "activerecord"
+
+cgi = CGI.new
+h = cgi.params
+
+file=File.open 'icpex.txt'
+atom=AtomScannerParser.new(file)
+#print "Records : "+atom.x.to_s
+#print "\n"
+print "TIME : "+atom.total_time.to_s
+%>
+</pre>
+</html>

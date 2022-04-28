@@ -1,0 +1,3 @@
+svn commit -m "Auto commit"
+svn update /net/v20z1/export/home/oracle10g/OraHome_2/Apache/Apache/htdocs/data
+
