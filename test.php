@@ -16,7 +16,8 @@ echo sizeof($final)."\n";//if putting results into an array, echo the number of 
 print_r($final);//display the whole array if putting the results into an array
 */
 
-function count_array_stuff($counter, $start_pos, $array_of_keys){
+function count_array_stuff($counter, $start_pos, $array_of_keys)
+{
     //$counter is how many times to do a for loop (how many items to pick from the array)
     //$start_pos is the starting position to start the for loop
     //$array_of_keys is an array containing the keys of the items picked from the array
@@ -25,22 +26,22 @@ function count_array_stuff($counter, $start_pos, $array_of_keys){
     global $final;
     global $numbers;
     global $count;
-    if ($counter <= 0 ){
+    if ($counter <= 0) {
         //this is the last iteration, echo the numbers/put into an array
-        $count_of_final = sizeof($final)+1;
-        foreach ($array_of_keys as $value){
+        $count_of_final = sizeof($final) + 1;
+        foreach ($array_of_keys as $value) {
             $final[$count_of_final][] = $numbers[$value];
             //echo "{$numbers[$value]}<br />";
         }
-       echo '<br /><br />';
+        echo '<br /><br />';
     } else {
-        for ($i=$start_pos; $i<$count; $i++){
+        for ($i = $start_pos; $i < $count; $i++) {
             //loop through array starting at $start_pos
             //create a new array witch has the keys from $array_of_keys with $i added to it
             $new_array_of_keys = array($i);
             $new_array_of_keys = array_merge($array_of_keys, $new_array_of_keys);
             //run the function again
-            count_array_stuff($counter -1, $i +1 ,$new_array_of_keys);
+            count_array_stuff($counter - 1, $i + 1, $new_array_of_keys);
         }
     }
 } 
@@ -59,7 +60,3 @@ foreach($rows as $row)
 			$row['TARGETBIAS']);
 	$db->Execute($insert);		
 }*/
-
-
-
-?>

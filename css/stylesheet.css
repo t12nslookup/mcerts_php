@@ -1,5 +1,4 @@
-input.submit
-{
+input.submit {
 	border: 3px double #999999;
 	border-top-color: #CCCCCC;
 	border-left-color: #CCCCCC;
@@ -20,12 +19,12 @@ body {
 	font-size: small;
 	margin: 10px;
 	background: White;
-	
+
 }
 
 .box {
 	padding: 0px;
-	padding-top: 0px;	
+	padding-top: 0px;
 }
 
 .innerbox {
@@ -35,11 +34,7 @@ body {
 	background: #FBFBFB;
 }
 
-h3 {
-
-}
-
-.equipment td{
+.equipment td {
 	padding-top: 10px;
 	font-weight: bold;
 }
@@ -65,11 +60,11 @@ h3 {
 }
 
 .Summary {
-	border: 1px solid #DFDFDF;		
+	border: 1px solid #DFDFDF;
 }
 
 .Summary td {
-	border-left: 1px solid #DFDFDF;	
+	border-left: 1px solid #DFDFDF;
 }
 
 .noborder td {
@@ -77,62 +72,68 @@ h3 {
 }
 
 .SummaryHeader td {
-	border-left: 1px solid #DFDFDF;	
+	border-left: 1px solid #DFDFDF;
 	font-weight: bolder;
 	padding: 3px;
 	background: White;
 }
 
-.SummaryHeader : hover {
+.SummaryHeader:hover {
 	background: #F0F0F0;
 }
 
 .test {
 	background: Black;
 }
-.test : hover {
+
+.test:hover {
 	background: Red;
 }
 
-.test2 : hover {
+.test2:hover {
 	background: Yellow;
 }
 
-.FAIL, .FAIL a {
+.FAIL,
+.FAIL a {
 	color: Red;
 	font-weight: bolder;
 	text-decoration: none;
 }
 
-.PASS, .PASS a {
+.PASS,
+.PASS a {
 	color: Blue;
 	font-weight: bolder;
 	text-decoration: none;
 }
 
-.SPASS, .SPASS a {
+.SPASS,
+.SPASS a {
 	color: Green;
 	font-weight: bolder;
 	text-decoration: none;
 }
 
-.NEB, .NEB a {
+.NEB,
+.NEB a {
 	color: #CECECE;
 }
 
-.tableheader{
+.tableheader {
 	padding: 3px;
 	font-weight: bolder;
 	text-align: center;
 }
 
-.reportheader{
+.reportheader {
 	padding: 3px;
 	font-weight: bolder;
 	text-align: left;
 }
 
-.tableheader td, .reportheader td{
+.tableheader td,
+.reportheader td {
 	padding: 4px;
 
 	border-bottom: 1px solid gray;
@@ -143,8 +144,8 @@ h3 {
 
 .mysmall {
 
-color: blue;
-font-size: small;
+	color: blue;
+	font-size: small;
 }
 
 .newheader {
@@ -160,16 +161,16 @@ font-size: small;
 	border-right: 0px;
 }
 
-.indented td
-{
+.indented td {
 	text-indent: 30px;
 }
+
 td {
 	padding: 2px;
 	border-bottom: 1px dashed #DFDFDF;
 }
 
-tr : hover {
+tr:hover {
 	background: #F4F4F4;
 }
 
@@ -177,7 +178,7 @@ tr : hover {
 	font-weight: bolder;
 }
 
-a{
+a {
 	border-bottom: 1px dashed;
 	text-decoration: none;
 }
@@ -185,47 +186,44 @@ a{
 a:hover {
 	background: Black;
 	color: White;
-	
+
 }
 
-.ReportRow td
-{
+.ReportRow td {
 	background: #FAEEF1;
 }
 
-#navcontainer ul
-{
-padding-left: 0;
-margin-left: 0;
-background-color: #EF96A8;
-color: White;
-float: left;
-width: 100%;
-font-family: arial, helvetica, sans-serif;
+#navcontainer ul {
+	padding-left: 0;
+	margin-left: 0;
+	background-color: #EF96A8;
+	color: White;
+	float: left;
+	width: 100%;
+	font-family: arial, helvetica, sans-serif;
 }
 
-#navcontainer ul li { display: inline;}
-
-#navcontainer ul li a
-{
-padding: 0.2em 1em;
-background-color: #C0183A;
-color: White;
-text-decoration: none;
-float: left;
-border: 0px;
-border-right: 1px dashed White;
+#navcontainer ul li {
+	display: inline;
 }
 
-#navcontainer ul li a:hover
-{
-background-color: #F5C5D0;
-color: #fff;
+#navcontainer ul li a {
+	padding: 0.2em 1em;
+	background-color: #C0183A;
+	color: White;
+	text-decoration: none;
+	float: left;
+	border: 0px;
+	border-right: 1px dashed White;
+}
+
+#navcontainer ul li a:hover {
+	background-color: #F5C5D0;
+	color: #fff;
 
 }
 
-#header
-{
+#header {
 	clear: both;
 	float: none;
 }

@@ -5,7 +5,10 @@
 	padding: 0
 }
 
-html #tabNavigation/* */ {
+html #tabNavigation
+
+/* */
+	{
 	padding: 4px 0 2px 0
 }
 
@@ -28,7 +31,10 @@ head+body #tabNavigation {
 	z-index: 1000
 }
 
-html #tabNavigation li/* */ {
+html #tabNavigation li
+
+/* */
+	{
 	height: auto
 }
 
@@ -43,7 +49,9 @@ html>body ul[id]#tabNavigation li {
 	padding: 3px 0 2px 0
 }
 
-#tabNavigation a, #tabNavigation a:link, #tabNavigation a:visited {
+#tabNavigation a,
+#tabNavigation a:link,
+#tabNavigation a:visited {
 	background: #AAA;
 	border-left: 1px solid #CCC;
 	border-right: 1px solid #CCC;
@@ -54,7 +62,16 @@ html>body ul[id]#tabNavigation li {
 	text-decoration: none
 }
 
-html #tabNavigation a/* */, html #tabNavigation a:link/* */, html #tabNavigation a:visited/* */ {
+html #tabNavigation a
+/* */
+,
+html #tabNavigation a:link
+/* */
+,
+html #tabNavigation a:visited
+
+/* */
+	{
 	height: auto
 }
 
@@ -84,7 +101,10 @@ html>body ul[id]#tabNavigation li.selectedTab {
 	padding: 3px 0 2px 0
 }
 
-#tabNavigation .selectedTab a, #tabNavigation .selectedTab a:link, #tabNavigation .selectedTab a:visited, #tabNavigation .selectedTab a:hover {
+#tabNavigation .selectedTab a,
+#tabNavigation .selectedTab a:link,
+#tabNavigation .selectedTab a:visited,
+#tabNavigation .selectedTab a:hover {
 	background: #F90;
 	border-left: 1px solid #FC3;
 	border-right: 1px solid #FC3;
@@ -96,23 +116,44 @@ html>body ul[id]#tabNavigation li.selectedTab {
 	top: 2px
 }
 
-html #tabNavigation .selectedTab a/* */, html #tabNavigation .selectedTab a:link/* */, html #tabNavigation .selectedTab a:visited/* */, html #tabNavigation .selectedTab a:hover/* */ {
+html #tabNavigation .selectedTab a
+/* */
+,
+html #tabNavigation .selectedTab a:link
+/* */
+,
+html #tabNavigation .selectedTab a:visited
+/* */
+,
+html #tabNavigation .selectedTab a:hover
+
+/* */
+	{
 	margin: -1px 0 0 0;
 	top: 1px
 }
 
-html>body #tabNavigation .selectedTab a, html>body #tabNavigation .selectedTab a:link, html>body #tabNavigation .selectedTab a:visited, html>body #tabNavigation .selectedTab a:hover {
+html>body #tabNavigation .selectedTab a,
+html>body #tabNavigation .selectedTab a:link,
+html>body #tabNavigation .selectedTab a:visited,
+html>body #tabNavigation .selectedTab a:hover {
 	padding: 2px 4px 2px 4px;
 	top: 0
 }
 
-head:first-child+body #tabNavigation .selectedTab a, head:first-child+body #tabNavigation .selectedTab a:link, head:first-child+body #tabNavigation .selectedTab a:visited, head:first-child+body #tabNavigation .selectedTab a:hover {
+head:first-child+body #tabNavigation .selectedTab a,
+head:first-child+body #tabNavigation .selectedTab a:link,
+head:first-child+body #tabNavigation .selectedTab a:visited,
+head:first-child+body #tabNavigation .selectedTab a:hover {
 	margin: -1px 0 0 0;
 	padding: 2px 4px 4px 4px;
 	top: 0
 }
 
-head:first-child+body ul[id]#tabNavigation .selectedTab a, head:first-child+body ul[id]#tabNavigation .selectedTab a:link, head:first-child+body ul[id]#tabNavigation .selectedTab a:visited, head:first-child+body ul[id]#tabNavigation .selectedTab a:hover {
+head:first-child+body ul[id]#tabNavigation .selectedTab a,
+head:first-child+body ul[id]#tabNavigation .selectedTab a:link,
+head:first-child+body ul[id]#tabNavigation .selectedTab a:visited,
+head:first-child+body ul[id]#tabNavigation .selectedTab a:hover {
 	padding: 3px 4px 3px 4px;
 	top: 1px
 }

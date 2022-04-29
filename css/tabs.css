@@ -15,7 +15,8 @@
 	position: relative;
 	width: 100%;
 	height: 3em;
-	width: 45em; /* a width is required for Opera, older Mozilla browsers, and Konqueror browsers */
+	width: 45em;
+	/* a width is required for Opera, older Mozilla browsers, and Konqueror browsers */
 }
 
 #header ul#primary {
@@ -23,15 +24,18 @@
 	padding: 0;
 	position: absolute;
 	bottom: -1px;
-	width: 45em; /* a width is required for Opera, older Mozilla browsers, and Konqueror browsers */
+	width: 45em;
+	/* a width is required for Opera, older Mozilla browsers, and Konqueror browsers */
 }
 
-#header ul#primary li  {
+#header ul#primary li {
 	display: inline;
 	list-style: none;
 }
 
-#header ul#primary a,#header ul#primary span,#header ul#primary a.current {
+#header ul#primary a,
+#header ul#primary span,
+#header ul#primary a.current {
 	width: 8em;
 	display: block;
 	float: left;
@@ -44,7 +48,9 @@
 	color: #333;
 }
 
-#header ul#primary span,#header ul#primary a.current,#header ul#primary a.current:hover {
+#header ul#primary span,
+#header ul#primary a.current,
+#header ul#primary a.current:hover {
 	border: 1px solid #666;
 	border-bottom: none;
 	background: #FFF3B3;
@@ -71,10 +77,12 @@
 	padding: 0;
 	bottom: -1.4em;
 	left: 1px;
-	width: 50em; /* a width is required for Opera, older Mozilla browsers, and Konqueror browsers */
+	width: 50em;
+	/* a width is required for Opera, older Mozilla browsers, and Konqueror browsers */
 }
 
-#header ul#secondary li a,#header ul#secondary li span {
+#header ul#secondary li a,
+#header ul#secondary li span {
 	width: auto;
 	display: block;
 	float: left;
@@ -105,4 +113,6 @@
 	background: transparent;
 }
 
-#header ul#secondary li:last-child a { border: none; }
+#header ul#secondary li:last-child a {
+	border: none;
+}

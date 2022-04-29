@@ -1,9 +1,7 @@
 <?php
-//$hostname="primary11";
-//$database="primarydb";
-$database="LIMSASM";
-$username="saldata";
-$password="oraclev1";
+$database = "database";
+$username = "username";
+$password = "password";
 
 PutEnv("ORACLE_SID=oracle10");
 PutEnv("ORACLE_HOME=/export/home/oracle10g/oracle/product/10.2.0/db_1");
@@ -12,61 +10,6 @@ PutEnv("TWO_TASK=LIMSASM");
 PutEnv("ORA_NLS33=/export/home/oracle10g/oracle/product/10.2.0/db_1/nls/data");
 PutEnv("NLS_DATE_FORMAT='RRRR-MM-DD HH24:MI:SS'");
 PutEnv("NLS_TIMESTAMP_FORMAT='RRRR-MM-DD HH24:MI:SS'");
-
-//
-//$conn = OCILogon("saldata","oraclev1", "//x4140-1:1521/limsasm");
-//
-//if (!$conn) { echo "Error connecting"; die; }
-//
-//query($conn, "select * from nls_session_parameters where parameter='NLS_DATE_FORMAT'");
-//query($conn, "select sysdate from dual");
-//
-//alterdate($conn);
-//
-//query($conn, "select * from nls_session_parameters where parameter='NLS_DATE_FORMAT'");
-//query($conn, "select sysdate from dual");
-//
-//exit;
-//
-//function query($conn, $query)
-//{
-//$stid = OCIParse($conn, $query);
-//if (!$stid) { echo "Error parsing"; die; }
-//
-//$r = OCIExecute($stid, OCI_DEFAULT);
-//if (!$r) { echo "Error executing"; die; }
-//
-//print '<table border="1">';
-//while ($succ = OCIFetchInto($stid, $row, OCI_RETURN_NULLS)) {
-//print '<tr>';
-//foreach ($row as $item) {
-//print '<td>'.($item?htmlentities($item):' ').'</td>';
-//}
-//print '</tr>';
-//}
-//print '</table>';
-//}
-//
-//function alterdate($conn)
-//{
-//$cmd = "alter session set nls_date_format = 'YYYY-MON-DD HH:MI'";
-//$stid = OCIParse($conn, $cmd);
-//if (!$stid) { echo "Error parsing"; die; }
-//
-//$r = ociexecute($stid, OCI_DEFAULT);
-//if (!$r) { echo "Error executing"; die; }
-//
-//}
-//
-//$stmt = OCIParse($conn,"SELECT * FROM batches WHERE ReferenceMaterialID = 4139 and selected=1 order by replicate1");
-//$ok = OCIExecute($stmt);
-//while (OCIFetchInto($stmt,$arr)) {
-//	print_r($arr[2]);
-//	echo "<hr>";
-//}
-
-
-
 
 //ADODB
 $currentPage = $_SERVER["PHP_SELF"];
@@ -95,14 +38,14 @@ $db->Connect($hostname, $username, $password, $database);
 
 //$db->Connect(false, $username, $password); //oracle
 
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
 {
   $theValue = (!get_magic_quotes_gpc()) ? addslashes($theValue) : $theValue;
 
   switch ($theType) {
     case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
+      break;
     case "long":
     case "int":
       $theValue = ($theValue != "") ? intval($theValue) : "NULL";
@@ -122,14 +65,12 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 
 function insertIntoDatabase($insertSQL) //loops through array $insertSQL and executes each one
 {
-	global $db;
-	
-	$db->StartTrans();
-	foreach($insertSQL as $SQL)
-	{			
-		$db->Execute($SQL);	
-	}
-	$db->CompleteTrans(true);
-	//}
+  global $db;
+
+  $db->StartTrans();
+  foreach ($insertSQL as $SQL) {
+    $db->Execute($SQL);
+  }
+  $db->CompleteTrans(true);
+  //}
 }
-?>
